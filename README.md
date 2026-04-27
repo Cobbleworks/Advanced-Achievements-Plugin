@@ -249,19 +249,11 @@ The screenshots below demonstrate the core features of the Advanced Achievements
 
 <table>
   <tr>
-    <th>Advanced Achievements - Achievement Progress</th>
     <th>Advanced Achievements - GUI Interface</th>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-progress.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-progress.png" alt="Achievement Progress" width="450"></a></td>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-gui.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-gui.png" alt="GUI Interface" width="450"></a></td>
-  </tr>
-  <tr>
     <th>Advanced Achievements - Reward System</th>
-    <th>Advanced Achievements - Admin Commands</th>
   </tr>
   <tr>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-gui.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-gui.png" alt="GUI Interface" width="450"></a></td>
     <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-rewards.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-rewards.png" alt="Reward System" width="450"></a></td>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-commands.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-commands.png" alt="Admin Commands" width="450"></a></td>
   </tr>
 </table>
