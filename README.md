@@ -392,15 +392,13 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## **Screenshots**
 
-The screenshots below demonstrate the core features of the Advanced Achievements plugin, including achievement progress tracking and the administrative GUI interface.
+The screenshots below demonstrate the core features of the Advanced Achievements plugin, including achievement progress tracking.
 
 <table>
   <tr>
     <th>Advanced Achievements - Achievement Progress</th>
-    <th>Advanced Achievements - GUI Interface</th>
   </tr>
   <tr>
     <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-progress.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-progress.png" alt="Achievement Progress" width="450"></a></td>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-gui.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-gui.png" alt="GUI Interface" width="450"></a></td>
   </tr>
 </table>
