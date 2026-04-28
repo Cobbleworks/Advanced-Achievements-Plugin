@@ -408,23 +408,23 @@ The screenshots below demonstrate Advanced Achievements across core workflows: a
     <th>Advanced Achievements Plugin - Reward GUI</th>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.46.42.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.46.42.png" alt="Achievement List" width="450"></a></td>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.02.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.02.png" alt="Reward GUI" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-list.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-list.png" alt="Achievement List" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-reward-gui.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-reward-gui.png" alt="Reward GUI" width="450"></a></td>
   </tr>
   <tr>
     <th>Advanced Achievements Plugin - Unlock Popup</th>
     <th>Advanced Achievements Plugin - Progress Command</th>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.55.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.55.png" alt="Unlock Popup" width="450"></a></td>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.58.35.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.58.35.png" alt="Progress Command" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-unlock-popup.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-unlock-popup.png" alt="Unlock Popup" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-progress-command.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-progress-command.png" alt="Progress Command" width="450"></a></td>
   </tr>
   <tr>
     <th>Advanced Achievements Plugin - Delete Command</th>
-    <th></th>
+    <th>Advanced Achievements Plugin - Achievement Progress</th>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_23.07.09.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_23.07.09.png" alt="Delete Command" width="450"></a></td>
-    <td></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-delete-command.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-delete-command.png" alt="Delete Command" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-progress.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-progress.png" alt="Achievement Progress" width="450"></a></td>
   </tr>
 </table>
