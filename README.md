@@ -10,11 +10,12 @@
   <a href="https://github.com/Cobbleworks/Advanced-Achievements/releases"><img src="https://img.shields.io/github/v/release/Cobbleworks/Advanced-Achievements?include_prereleases&style=flat-square&color=4CAF50" alt="Latest Release"></a>&nbsp;&nbsp;<a href="https://github.com/Cobbleworks/Advanced-Achievements/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License"></a>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Java-17+-orange?style=flat-square" alt="Java Version">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Minecraft-1.20+-green?style=flat-square" alt="Minecraft Version">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Platform-Spigot%2FPaper-yellow?style=flat-square" alt="Platform">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status">&nbsp;&nbsp;<a href="https://github.com/Cobbleworks/Advanced-Achievements/issues"><img src="https://img.shields.io/github/issues/Cobbleworks/Advanced-Achievements?style=flat-square&color=orange" alt="Open Issues"></a>
 </p>
 
-Advanced Achievements is an open-source Minecraft plugin that provides a fully configurable achievement system for Spigot and Paper servers. Originally developed for a private Minecraft server, the plugin tracks player progress across 12 distinct task types including block breaking, crafting, mob kills, fishing, trading, taming, enchanting, and more. Every achievement is independently configurable with its own title, description, GUI icon, task target, required count, reward list, hidden flag, and prerequisite chain. Progress and claim state are persisted per player in either SQLite or MySQL, and the entire system is designed to be extended by server developers through a built-in Java API.
+Advanced Achievements is an open-source Minecraft plugin that provides a fully configurable achievement system for Spigot and Paper servers. The plugin ships with 30 predefined achievements out of the box and tracks player progress across 19 task types, including combat, building, smelting, movement, and playtime-based goals. Every achievement is independently configurable with its own title, description, GUI icon, task target, required count, reward list, hidden flag, and prerequisite chain. Progress and claim state are persisted per player in either SQLite or MySQL, and the entire system is designed to be extended by server developers through a built-in Java API.
 
 ### **Core Features**
 
-- **12 Task Types:** Tracks block breaking, item pickup, mob kills, crafting, fishing, eating, enchanting, trading, mining, breeding, taming, and player death - each with support for `ANY` targets or specific material/entity names
+- **30 Predefined Achievements:** Includes a full starter progression set with combat, utility, exploration, economy, and endgame milestone achievements
+- **19 Task Types:** Tracks block break/place, item pickup/crafting/smelting, mob and player kills, damage dealt/taken, fishing, eating, enchanting, trading, mining, breeding, taming, death, walk distance, and play time with `ANY` and specific targets
 - **Reward System:** Five reward types supported per achievement - items, XP, economy money (via Vault), server commands with `{player}` and `{uuid}` placeholders, and title messages - all defined directly in `achievements.yml`
 - **Achievement Prerequisites:** Achievements can require other achievements to be unlocked first, enabling multi-step progression chains
 - **Hidden Achievements:** Achievements can be flagged as hidden so they do not appear in the list or GUI until the player has already unlocked them
@@ -147,7 +148,7 @@ achievements:
     description: "What the player must do"
     icon: COBBLESTONE                  # any valid Minecraft material name
     task:
-      type: block_break                # one of the 12 task type IDs (see Task Types below)
+      type: block_break                # one of the supported task type IDs (see Task Types below)
       target: "ANY"                    # material, entity, or ANY (see Task Types for details)
       amount: 10                       # required count to unlock the achievement
     rewards:                           # list of rewards granted on claim (see Reward Format)
@@ -166,14 +167,21 @@ Achievements added or edited in `achievements.yml` take effect immediately after
 | Task Type ID | Tracks | Valid `target` Values |
 |--------------|--------|-----------------------|
 | `block_break` | Breaking blocks | `ANY`, or any block material (e.g., `OAK_LOG`, `STONE`) |
+| `block_place` | Placing blocks | `ANY`, or any block material |
 | `item_pickup` | Picking up items | `ANY`, `LOG` (all log/wood types), or any item material name |
 | `mob_kill` | Killing entities | `ANY`, `HOSTILE` (any monster), or any entity type (e.g., `ZOMBIE`) |
+| `player_kill` | Killing players | `ANY`, or specific player name |
 | `item_craft` | Crafting items | `ANY`, or any craftable material name |
+| `item_smelt` | Smelting output collection | `ANY`, or smelted output item material (e.g., `IRON_INGOT`) |
 | `fishing` | Catching fish or items | `ANY`, or any caught item material name |
 | `eating` | Consuming food | `ANY`, or any food material name |
 | `enchanting` | Enchanting items | `ANY` (individual item target not tracked) |
 | `trading` | Completing villager trades | `ANY` (individual item target not tracked) |
 | `mining` | Mining ores | `ANY`, or any ore material name containing `_ORE` |
+| `damage_dealt` | Dealing combat damage | `ANY`, or entity type name |
+| `damage_taken` | Taking incoming damage | `ANY`, or damage cause (e.g., `FALL`, `LAVA`, `ENTITY_ATTACK`) |
+| `walk_distance` | Travel distance | `ANY`, or world name (stored as centi-blocks) |
+| `play_time` | Online play time | `ANY`, or world name (stored in seconds) |
 | `breeding` | Breeding animals | `ANY`, or any breedable entity type (e.g., `COW`) |
 | `taming` | Taming animals | `ANY`, or any tameable entity type (e.g., `WOLF`) |
 | `death` | Dying | `ANY`, or a specific player name to track per-player deaths |
@@ -359,7 +367,7 @@ src/main/
 │   ├── database/
 │   │   └── DatabaseManager.java               - SQLite/MySQL async database layer
 │   ├── enums/
-│   │   ├── TaskType.java                      - 12 task type definitions
+│   │   ├── TaskType.java                      - Task type definitions
 │   │   └── AchievementState.java              - Locked/unlocked/claimed states
 │   ├── events/
 │   │   ├── AchievementUnlockEvent.java        - Cancellable unlock event
@@ -367,7 +375,7 @@ src/main/
 │   ├── gui/
 │   │   └── AchievementGUI.java                - Paginated inventory GUI
 │   ├── listeners/
-│   │   ├── AchievementListener.java           - Task tracking (all 12 task types)
+│   │   ├── AchievementListener.java           - Task tracking for all configured task types
 │   │   ├── ChatListener.java                  - Player chat input handling
 │   │   └── CreationChatListener.java          - Chat creation wizard flow
 │   ├── managers/
@@ -392,13 +400,49 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## **Screenshots**
 
-The screenshots below demonstrate the core features of the Advanced Achievements plugin, including achievement progress tracking.
+The screenshots below demonstrate the core features of the Advanced Achievements plugin.
 
 <table>
   <tr>
-    <th>Advanced Achievements - Achievement Progress</th>
+    <th>Advanced Achievements - Achievement List</th>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-progress.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-progress.png" alt="Achievement Progress" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.46.42.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.46.42.png" alt="List of all Achievements with tasks and rewards" width="450"></a></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Advanced Achievements - Reward GUI</th>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.02.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.02.png" alt="GUI with unlockable and claimable rewards" width="450"></a></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Advanced Achievements - Unlock Popup</th>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.55.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.55.png" alt="Popup when unlocking an achievement" width="450"></a></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Advanced Achievements - Progress Command</th>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.58.35.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.58.35.png" alt="Command output showing achievement progress" width="450"></a></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Advanced Achievements - Delete Command</th>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_23.07.09.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_23.07.09.png" alt="Command output when deleting an achievement" width="450"></a></td>
   </tr>
 </table>
