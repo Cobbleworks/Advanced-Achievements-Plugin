@@ -404,24 +404,24 @@ The screenshots below demonstrate Advanced Achievements across core workflows: a
 
 <table>
   <tr>
-    <th>Advanced Achievements Plugin - Achievement List</th>
-    <th>Advanced Achievements Plugin - Reward GUI</th>
+    <th>Advanced Achievements - Achievement List</th>
+    <th>Advanced Achievements - Reward GUI</th>
   </tr>
   <tr>
     <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-list.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-list.png" alt="Achievement List" width="450"></a></td>
     <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-reward-gui.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-reward-gui.png" alt="Reward GUI" width="450"></a></td>
   </tr>
   <tr>
-    <th>Advanced Achievements Plugin - Unlock Popup</th>
-    <th>Advanced Achievements Plugin - Progress Command</th>
+    <th>Advanced Achievements - Unlock Popup</th>
+    <th>Advanced Achievements - Progress Command</th>
   </tr>
   <tr>
     <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-unlock-popup.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-unlock-popup.png" alt="Unlock Popup" width="450"></a></td>
     <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-progress-command.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-progress-command.png" alt="Progress Command" width="450"></a></td>
   </tr>
   <tr>
-    <th>Advanced Achievements Plugin - Delete Command</th>
-    <th>Advanced Achievements Plugin - Achievement Progress</th>
+    <th>Advanced Achievements - Delete Command</th>
+    <th>Advanced Achievements - Achievement Progress</th>
   </tr>
   <tr>
     <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-delete-command.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-delete-command.png" alt="Delete Command" width="450"></a></td>
