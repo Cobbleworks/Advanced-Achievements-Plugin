@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <img src="images/plugin-logo.png" alt="Advanced Achievements Plugin" width="180" />
 </p>
 <h1 align="center">Advanced Achievements Plugin</h1>
@@ -7,7 +7,7 @@
   <b>Custom rewards, progress tracking, and persistent database integration.</b>
 </p>
 <p align="center">
-  <a href="https://github.com/Cobbleworks/Advanced-Achievements/releases"><img src="https://img.shields.io/github/v/release/Cobbleworks/Advanced-Achievements?include_prereleases&style=flat-square&color=4CAF50" alt="Latest Release"></a>&nbsp;&nbsp;<a href="https://github.com/Cobbleworks/Advanced-Achievements/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License"></a>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Java-17+-orange?style=flat-square" alt="Java Version">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Minecraft-1.20+-green?style=flat-square" alt="Minecraft Version">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Platform-Spigot%2FPaper-yellow?style=flat-square" alt="Platform">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status">&nbsp;&nbsp;<a href="https://github.com/Cobbleworks/Advanced-Achievements/issues"><img src="https://img.shields.io/github/issues/Cobbleworks/Advanced-Achievements?style=flat-square&color=orange" alt="Open Issues"></a>
+  <a href="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/releases"><img src="https://img.shields.io/github/v/release/Cobbleworks/Advanced-Achievements-Plugin?include_prereleases&style=flat-square&color=4CAF50" alt="Latest Release"></a>&nbsp;&nbsp;<a href="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License"></a>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Java-17+-orange?style=flat-square" alt="Java Version">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Minecraft-1.20+-green?style=flat-square" alt="Minecraft Version">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Platform-Spigot%2FPaper-yellow?style=flat-square" alt="Platform">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status">&nbsp;&nbsp;<a href="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/issues"><img src="https://img.shields.io/github/issues/Cobbleworks/Advanced-Achievements-Plugin?style=flat-square&color=orange" alt="Open Issues"></a>
 </p>
 
 Advanced Achievements is an open-source Minecraft plugin that provides a fully configurable achievement system for Spigot and Paper servers. The plugin ships with 30 predefined achievements out of the box and tracks player progress across 19 task types, including combat, building, smelting, movement, and playtime-based goals. Every achievement is independently configurable with its own title, description, GUI icon, task target, required count, reward list, hidden flag, and prerequisite chain. Progress and claim state are persisted per player in either SQLite or MySQL, and the entire system is designed to be extended by server developers through a built-in Java API.
@@ -75,7 +75,7 @@ Before installing Advanced Achievements, confirm the following requirements are 
 
 ### **Installation Steps**
 
-1. Download the latest `AdvancedAchievements-x.x.x.jar` from the [Releases](https://github.com/Cobbleworks/Advanced-Achievements/releases) page
+1. Download the latest `AdvancedAchievements-x.x.x.jar` from the [Releases](https://github.com/Cobbleworks/Advanced-Achievements-Plugin/releases) page
 2. *(Optional)* Download and install [Vault](https://www.spigotmc.org/resources/vault.34315/) if you want economy/money rewards
 3. **Stop your server completely** before placing any files
 4. Copy the `.jar` into your server's `plugins/` directory
@@ -87,10 +87,10 @@ On the first server start after installation, Advanced Achievements creates:
 
 ```
 plugins/
-└── AdvancedAchievements/
-    ├── config.yml           - Global settings: database, notifications, GUI, progress bar
-    ├── achievements.yml     - All achievement definitions
-    └── messages.yml         - All plugin messages, prefixes, and GUI item names
+â””â”€â”€ AdvancedAchievements/
+    â”œâ”€â”€ config.yml           - Global settings: database, notifications, GUI, progress bar
+    â”œâ”€â”€ achievements.yml     - All achievement definitions
+    â””â”€â”€ messages.yml         - All plugin messages, prefixes, and GUI item names
 ```
 
 - **`config.yml`** controls the database backend (SQLite or MySQL), notification sounds, firework effects, progress bar display, and GUI layout. See the [Configuration](#configuration) section for all keys.
@@ -344,7 +344,7 @@ Advanced Achievements uses **Apache Maven** as its build system. Vault is a soft
 
 ```bash
 # Clone the repository
-git clone https://github.com/Cobbleworks/Advanced-Achievements.git
+git clone https://github.com/Cobbleworks/Advanced-Achievements-Plugin.git
 cd Advanced-Achievements
 
 # Compile and package
@@ -357,41 +357,41 @@ The output JAR is written to `target/Advanced-Achievements-x.x.x.jar`. Copy it i
 
 ```
 src/main/
-├── java/com/example/advancedachievements/
-│   ├── AdvancedAchievements.java              - Plugin entry point (onEnable / onDisable)
-│   ├── api/
-│   │   └── AchievementAPI.java                - Public API for external plugin integration
-│   ├── commands/
-│   │   ├── AchievementCommand.java            - /ach player commands + tab completion
-│   │   └── AchievementAdminCommand.java       - /achadmin administrative commands
-│   ├── database/
-│   │   └── DatabaseManager.java               - SQLite/MySQL async database layer
-│   ├── enums/
-│   │   ├── TaskType.java                      - Task type definitions
-│   │   └── AchievementState.java              - Locked/unlocked/claimed states
-│   ├── events/
-│   │   ├── AchievementUnlockEvent.java        - Cancellable unlock event
-│   │   └── AchievementProgressEvent.java      - Progress increase event
-│   ├── gui/
-│   │   └── AchievementGUI.java                - Paginated inventory GUI
-│   ├── listeners/
-│   │   ├── AchievementListener.java           - Task tracking for all configured task types
-│   │   ├── ChatListener.java                  - Player chat input handling
-│   │   └── CreationChatListener.java          - Chat creation wizard flow
-│   ├── managers/
-│   │   ├── AchievementManager.java            - Achievement CRUD and YAML persistence
-│   │   ├── ConfigManager.java                 - config.yml loading and access
-│   │   ├── MessageManager.java                - messages.yml and formatted output
-│   │   ├── ProgressManager.java               - Per-player progress tracking and state
-│   │   └── RewardManager.java                 - Reward processing and delivery
-│   └── models/
-│       ├── Achievement.java                   - Achievement data model
-│       └── PlayerProgress.java                - Per-player progress model
-└── resources/
-    ├── config.yml                             - Plugin and database configuration
-    ├── achievements.yml                       - Default achievement definitions
-    ├── messages.yml                           - All plugin messages and labels
-    └── plugin.yml                             - Plugin metadata, commands, permissions
+â”œâ”€â”€ java/com/example/advancedachievements/
+â”‚   â”œâ”€â”€ AdvancedAchievements.java              - Plugin entry point (onEnable / onDisable)
+â”‚   â”œâ”€â”€ api/
+â”‚   â”‚   â””â”€â”€ AchievementAPI.java                - Public API for external plugin integration
+â”‚   â”œâ”€â”€ commands/
+â”‚   â”‚   â”œâ”€â”€ AchievementCommand.java            - /ach player commands + tab completion
+â”‚   â”‚   â””â”€â”€ AchievementAdminCommand.java       - /achadmin administrative commands
+â”‚   â”œâ”€â”€ database/
+â”‚   â”‚   â””â”€â”€ DatabaseManager.java               - SQLite/MySQL async database layer
+â”‚   â”œâ”€â”€ enums/
+â”‚   â”‚   â”œâ”€â”€ TaskType.java                      - Task type definitions
+â”‚   â”‚   â””â”€â”€ AchievementState.java              - Locked/unlocked/claimed states
+â”‚   â”œâ”€â”€ events/
+â”‚   â”‚   â”œâ”€â”€ AchievementUnlockEvent.java        - Cancellable unlock event
+â”‚   â”‚   â””â”€â”€ AchievementProgressEvent.java      - Progress increase event
+â”‚   â”œâ”€â”€ gui/
+â”‚   â”‚   â””â”€â”€ AchievementGUI.java                - Paginated inventory GUI
+â”‚   â”œâ”€â”€ listeners/
+â”‚   â”‚   â”œâ”€â”€ AchievementListener.java           - Task tracking for all configured task types
+â”‚   â”‚   â”œâ”€â”€ ChatListener.java                  - Player chat input handling
+â”‚   â”‚   â””â”€â”€ CreationChatListener.java          - Chat creation wizard flow
+â”‚   â”œâ”€â”€ managers/
+â”‚   â”‚   â”œâ”€â”€ AchievementManager.java            - Achievement CRUD and YAML persistence
+â”‚   â”‚   â”œâ”€â”€ ConfigManager.java                 - config.yml loading and access
+â”‚   â”‚   â”œâ”€â”€ MessageManager.java                - messages.yml and formatted output
+â”‚   â”‚   â”œâ”€â”€ ProgressManager.java               - Per-player progress tracking and state
+â”‚   â”‚   â””â”€â”€ RewardManager.java                 - Reward processing and delivery
+â”‚   â””â”€â”€ models/
+â”‚       â”œâ”€â”€ Achievement.java                   - Achievement data model
+â”‚       â””â”€â”€ PlayerProgress.java                - Per-player progress model
+â””â”€â”€ resources/
+    â”œâ”€â”€ config.yml                             - Plugin and database configuration
+    â”œâ”€â”€ achievements.yml                       - Default achievement definitions
+    â”œâ”€â”€ messages.yml                           - All plugin messages and labels
+    â””â”€â”€ plugin.yml                             - Plugin metadata, commands, permissions
 ```
 
 ## **License**
@@ -408,23 +408,23 @@ The screenshots below demonstrate Advanced Achievements across core workflows: a
     <th>Advanced Achievements - Reward GUI</th>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-list.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-list.png" alt="Achievement List" width="450"></a></td>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-reward-gui.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-reward-gui.png" alt="Reward GUI" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/raw/main/images/screenshot-achievement-list.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/raw/main/images/screenshot-achievement-list.png" alt="Achievement List" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/raw/main/images/screenshot-reward-gui.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/raw/main/images/screenshot-reward-gui.png" alt="Reward GUI" width="450"></a></td>
   </tr>
   <tr>
     <th>Advanced Achievements - Unlock Popup</th>
     <th>Advanced Achievements - Progress Command</th>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-unlock-popup.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-unlock-popup.png" alt="Unlock Popup" width="450"></a></td>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-progress-command.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-progress-command.png" alt="Progress Command" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/raw/main/images/screenshot-unlock-popup.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/raw/main/images/screenshot-unlock-popup.png" alt="Unlock Popup" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/raw/main/images/screenshot-progress-command.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/raw/main/images/screenshot-progress-command.png" alt="Progress Command" width="450"></a></td>
   </tr>
   <tr>
     <th>Advanced Achievements - Delete Command</th>
     <th>Advanced Achievements - Achievement Progress</th>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-delete-command.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-delete-command.png" alt="Delete Command" width="450"></a></td>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-progress.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/screenshot-achievement-progress.png" alt="Achievement Progress" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/raw/main/images/screenshot-delete-command.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/raw/main/images/screenshot-delete-command.png" alt="Delete Command" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/raw/main/images/screenshot-achievement-progress.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements-Plugin/raw/main/images/screenshot-achievement-progress.png" alt="Achievement Progress" width="450"></a></td>
   </tr>
 </table>
