@@ -400,49 +400,31 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## **Screenshots**
 
-The screenshots below demonstrate the core features of the Advanced Achievements plugin.
+The screenshots below demonstrate Advanced Achievements across core workflows: achievement listing, GUI reward claiming, unlock feedback, and command-based administration.
 
 <table>
   <tr>
-    <th>Advanced Achievements - Achievement List</th>
+    <th>Advanced Achievements Plugin - Achievement List</th>
+    <th>Advanced Achievements Plugin - Reward GUI</th>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.46.42.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.46.42.png" alt="List of all Achievements with tasks and rewards" width="450"></a></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <th>Advanced Achievements - Reward GUI</th>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.46.42.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.46.42.png" alt="Achievement List" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.02.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.02.png" alt="Reward GUI" width="450"></a></td>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.02.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.02.png" alt="GUI with unlockable and claimable rewards" width="450"></a></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <th>Advanced Achievements - Unlock Popup</th>
+    <th>Advanced Achievements Plugin - Unlock Popup</th>
+    <th>Advanced Achievements Plugin - Progress Command</th>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.55.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.55.png" alt="Popup when unlocking an achievement" width="450"></a></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <th>Advanced Achievements - Progress Command</th>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.55.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.50.55.png" alt="Unlock Popup" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.58.35.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.58.35.png" alt="Progress Command" width="450"></a></td>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.58.35.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_22.58.35.png" alt="Command output showing achievement progress" width="450"></a></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <th>Advanced Achievements - Delete Command</th>
+    <th>Advanced Achievements Plugin - Delete Command</th>
+    <th></th>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_23.07.09.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_23.07.09.png" alt="Command output when deleting an achievement" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_23.07.09.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Advanced-Achievements/raw/main/images/2026-04-28_23.07.09.png" alt="Delete Command" width="450"></a></td>
+    <td></td>
   </tr>
 </table>
