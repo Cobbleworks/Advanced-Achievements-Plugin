@@ -87,10 +87,10 @@ On the first server start after installation, Advanced Achievements creates:
 
 ```
 plugins/
-â””â”€â”€ AdvancedAchievements/
-    â”œâ”€â”€ config.yml           - Global settings: database, notifications, GUI, progress bar
-    â”œâ”€â”€ achievements.yml     - All achievement definitions
-    â””â”€â”€ messages.yml         - All plugin messages, prefixes, and GUI item names
+`-- AdvancedAchievements/
+  |-- config.yml           - Global settings: database, notifications, GUI, progress bar
+  |-- achievements.yml     - All achievement definitions
+  `-- messages.yml         - All plugin messages, prefixes, and GUI item names
 ```
 
 - **`config.yml`** controls the database backend (SQLite or MySQL), notification sounds, firework effects, progress bar display, and GUI layout. See the [Configuration](#configuration) section for all keys.
@@ -357,41 +357,41 @@ The output JAR is written to `target/Advanced-Achievements-x.x.x.jar`. Copy it i
 
 ```
 src/main/
-â”œâ”€â”€ java/com/example/advancedachievements/
-â”‚   â”œâ”€â”€ AdvancedAchievements.java              - Plugin entry point (onEnable / onDisable)
-â”‚   â”œâ”€â”€ api/
-â”‚   â”‚   â””â”€â”€ AchievementAPI.java                - Public API for external plugin integration
-â”‚   â”œâ”€â”€ commands/
-â”‚   â”‚   â”œâ”€â”€ AchievementCommand.java            - /ach player commands + tab completion
-â”‚   â”‚   â””â”€â”€ AchievementAdminCommand.java       - /achadmin administrative commands
-â”‚   â”œâ”€â”€ database/
-â”‚   â”‚   â””â”€â”€ DatabaseManager.java               - SQLite/MySQL async database layer
-â”‚   â”œâ”€â”€ enums/
-â”‚   â”‚   â”œâ”€â”€ TaskType.java                      - Task type definitions
-â”‚   â”‚   â””â”€â”€ AchievementState.java              - Locked/unlocked/claimed states
-â”‚   â”œâ”€â”€ events/
-â”‚   â”‚   â”œâ”€â”€ AchievementUnlockEvent.java        - Cancellable unlock event
-â”‚   â”‚   â””â”€â”€ AchievementProgressEvent.java      - Progress increase event
-â”‚   â”œâ”€â”€ gui/
-â”‚   â”‚   â””â”€â”€ AchievementGUI.java                - Paginated inventory GUI
-â”‚   â”œâ”€â”€ listeners/
-â”‚   â”‚   â”œâ”€â”€ AchievementListener.java           - Task tracking for all configured task types
-â”‚   â”‚   â”œâ”€â”€ ChatListener.java                  - Player chat input handling
-â”‚   â”‚   â””â”€â”€ CreationChatListener.java          - Chat creation wizard flow
-â”‚   â”œâ”€â”€ managers/
-â”‚   â”‚   â”œâ”€â”€ AchievementManager.java            - Achievement CRUD and YAML persistence
-â”‚   â”‚   â”œâ”€â”€ ConfigManager.java                 - config.yml loading and access
-â”‚   â”‚   â”œâ”€â”€ MessageManager.java                - messages.yml and formatted output
-â”‚   â”‚   â”œâ”€â”€ ProgressManager.java               - Per-player progress tracking and state
-â”‚   â”‚   â””â”€â”€ RewardManager.java                 - Reward processing and delivery
-â”‚   â””â”€â”€ models/
-â”‚       â”œâ”€â”€ Achievement.java                   - Achievement data model
-â”‚       â””â”€â”€ PlayerProgress.java                - Per-player progress model
-â””â”€â”€ resources/
-    â”œâ”€â”€ config.yml                             - Plugin and database configuration
-    â”œâ”€â”€ achievements.yml                       - Default achievement definitions
-    â”œâ”€â”€ messages.yml                           - All plugin messages and labels
-    â””â”€â”€ plugin.yml                             - Plugin metadata, commands, permissions
+|-- java/com/example/advancedachievements/
+|   |-- AdvancedAchievements.java              - Plugin entry point (onEnable / onDisable)
+|   |-- api/
+|   |   `-- AchievementAPI.java                - Public API for external plugin integration
+|   |-- commands/
+|   |   |-- AchievementCommand.java            - /ach player commands + tab completion
+|   |   `-- AchievementAdminCommand.java       - /achadmin administrative commands
+|   |-- database/
+|   |   `-- DatabaseManager.java               - SQLite/MySQL async database layer
+|   |-- enums/
+|   |   |-- TaskType.java                      - Task type definitions
+|   |   `-- AchievementState.java              - Locked/unlocked/claimed states
+|   |-- events/
+|   |   |-- AchievementUnlockEvent.java        - Cancellable unlock event
+|   |   `-- AchievementProgressEvent.java      - Progress increase event
+|   |-- gui/
+|   |   `-- AchievementGUI.java                - Paginated inventory GUI
+|   |-- listeners/
+|   |   |-- AchievementListener.java           - Task tracking for all configured task types
+|   |   |-- ChatListener.java                  - Player chat input handling
+|   |   `-- CreationChatListener.java          - Chat creation wizard flow
+|   |-- managers/
+|   |   |-- AchievementManager.java            - Achievement CRUD and YAML persistence
+|   |   |-- ConfigManager.java                 - config.yml loading and access
+|   |   |-- MessageManager.java                - messages.yml and formatted output
+|   |   |-- ProgressManager.java               - Per-player progress tracking and state
+|   |   `-- RewardManager.java                 - Reward processing and delivery
+|   `-- models/
+|       |-- Achievement.java                   - Achievement data model
+|       `-- PlayerProgress.java                - Per-player progress model
+`-- resources/
+  |-- config.yml                             - Plugin and database configuration
+  |-- achievements.yml                       - Default achievement definitions
+  |-- messages.yml                           - All plugin messages and labels
+  `-- plugin.yml                             - Plugin metadata, commands, permissions
 ```
 
 ## **License**
