@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-04-29
+
+Advanced Achievements v1.0.2 expands the task system and improves command-driven achievement creation with stronger runtime handling.
+
+### New Tasks And Command Improvements
+
+- **Expanded Task Coverage**: Added additional task-type support so more gameplay actions can be tracked through achievements
+- **Command Flow Improvements**: Refined command/session handling for creating and managing achievements with the newer task definitions
+- **Configuration Alignment**: Updated achievement configuration data to match the expanded task model and runtime processing
+
+**Note:** If you encounter any bugs or issues, please don't hesitate to open an [issue](https://github.com/Cobbleworks/Advanced-Achievements-Plugin/issues). For any questions or to start a discussion, feel free to initiate a [discussion](https://github.com/Cobbleworks/Advanced-Achievements-Plugin/discussions) on the GitHub repository.
+
 ## [1.0.1] - 2026-04-28
 
 Advanced Achievements v1.0.1 delivers stability improvements and maintenance fixes following the initial release.
