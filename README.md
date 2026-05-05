@@ -42,24 +42,25 @@ Advanced Achievements is an open-source Minecraft plugin that provides a fully c
     - [Installation Steps](#installation-steps)
     - [First Launch & Configuration](#first-launch--configuration)
     - [Verifying Installation](#verifying-installation)
-2. [Configuration](#configuration)
+2. [Third-Party Libraries](#third-party-libraries)
+    - [Vault](#vault)
+3. [Configuration](#configuration)
     - [config.yml Reference](#configyml-reference)
     - [Achievement Definition Format](#achievement-definition-format)
     - [Task Types](#task-types)
     - [Reward Format](#reward-format)
-3. [How It Works](#how-it-works)
+4. [How It Works](#how-it-works)
     - [Task Tracking](#task-tracking)
     - [Progress and Unlock Flow](#progress-and-unlock-flow)
     - [Database Persistence](#database-persistence)
-4. [Player Commands](#player-commands)
+5. [Player Commands](#player-commands)
     - [Command Reference](#command-reference)
-5. [Administrative Commands](#administrative-commands)
-6. [Permissions](#permissions)
-7. [Developer API](#developer-api)
-8. [Building from Source](#building-from-source)
-9. [License](#license)
-10. [Third-Party Libraries](#third-party-libraries)
-10. [Screenshots](#screenshots)
+6. [Administrative Commands](#administrative-commands)
+7. [Permissions](#permissions)
+8. [Developer API](#developer-api)
+9. [Building from Source](#building-from-source)
+10. [License](#license)
+11. [Screenshots](#screenshots)
 
 ## **Getting Started**
 
@@ -105,6 +106,26 @@ plugins/
 - Run `/ach` in-game to open the paginated achievement list
 - Run `/ach gui` to verify the inventory GUI opens correctly
 - If the plugin fails to load, check the server console for `AdvancedAchievements` error messages (common causes: wrong Java version, corrupt JAR, or a missing database driver)
+
+## **Third-Party Libraries**
+
+Advanced Achievements optionally integrates with **Vault** to unlock economy-based rewards. Vault is a soft dependency — the plugin functions fully without it, but economy rewards require a Vault-compatible economy plugin to be installed alongside it.
+
+### Vault
+
+**Vault** is a permissions, chat, and economy API for Bukkit-based Minecraft servers. Advanced Achievements uses Vault to interface with whatever economy plugin is installed on the server (such as EssentialsX Economy or CMI) for dispensing currency rewards when achievements are unlocked. No Vault features are required for non-economy reward types.
+
+- **Website:** [Vault SpigotMC Resource](https://www.spigotmc.org/resources/vault.34315/)
+- **GitHub:** [MilkBowl/Vault](https://github.com/MilkBowl/Vault)
+- **License:** Vault is licensed under the GNU Lesser General Public License v3.0.
+
+### Additional Information
+
+For more details about Vault and compatible economy plugins, check the official repository:
+
+- **Vault Documentation:** [Vault GitHub Repository](https://github.com/MilkBowl/Vault)
+
+If you have questions or issues related to Vault integration, please [open an issue](https://github.com/Cobbleworks/Advanced-Achievements-Plugin/issues) on GitHub.
 
 ## **Configuration**
 
@@ -398,26 +419,6 @@ src/main/
 ## **License**
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-## **Third-Party Libraries**
-
-Advanced Achievements optionally integrates with **Vault** to unlock economy-based rewards. Vault is a soft dependency — the plugin functions fully without it, but economy rewards require a Vault-compatible economy plugin to be installed alongside it.
-
-### Vault
-
-**Vault** is a permissions, chat, and economy API for Bukkit-based Minecraft servers. Advanced Achievements uses Vault to interface with whatever economy plugin is installed on the server (such as EssentialsX Economy or CMI) for dispensing currency rewards when achievements are unlocked. No Vault features are required for non-economy reward types.
-
-- **Website:** [Vault SpigotMC Resource](https://www.spigotmc.org/resources/vault.34315/)
-- **GitHub:** [MilkBowl/Vault](https://github.com/MilkBowl/Vault)
-- **License:** Vault is licensed under the GNU Lesser General Public License v3.0.
-
-### Additional Information
-
-For more details about Vault and compatible economy plugins, check the official repository:
-
-- **Vault Documentation:** [Vault GitHub Repository](https://github.com/MilkBowl/Vault)
-
-If you have questions or issues related to Vault integration, please [open an issue](https://github.com/Cobbleworks/Advanced-Achievements-Plugin/issues) on GitHub.
 
 ## **Screenshots**
 
