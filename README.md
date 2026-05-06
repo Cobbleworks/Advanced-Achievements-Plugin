@@ -44,6 +44,7 @@ Advanced Achievements is an open-source Minecraft plugin that provides a fully c
     - [Verifying Installation](#verifying-installation)
 2. [Third-Party Libraries](#third-party-libraries)
     - [Vault](#vault)
+    - [Additional Information](#additional-information)
 3. [Configuration](#configuration)
     - [config.yml Reference](#configyml-reference)
     - [Achievement Definition Format](#achievement-definition-format)
